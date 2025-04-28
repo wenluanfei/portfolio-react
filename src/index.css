@@ -1,13 +1,43 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* 设置页面背景 */
+body {
+  background: linear-gradient(45deg, #f8f9fa, #e0e0e0);
+  font-family: 'Arial', sans-serif;
+}
+
+/* 页眉样式 */
+.App-header {
+  background-color: #4CAF50;
+  padding: 20px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* 内容区域样式 */
+.App {
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 为链接按钮添加一些样式 */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
 }

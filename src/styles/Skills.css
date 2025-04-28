@@ -1,0 +1,28 @@
+.section ul {
+  padding: 0;
+  list-style: none;
+}
+
+.section ul li {
+  background-color: #e8f5e9; /* 浅绿色（Light Mode） */
+  color: #252e26;
+  margin: 8px 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.section ul li:hover {
+  background-color: #c8e6c9;
+}
+
+/* 深色模式下重新设置背景和文字颜色 */
+body.dark-mode .section ul li {
+  background-color: #4b554f;
+  color: #c8e6c9;
+}
+
+body.dark-mode .section ul li:hover {
+  background-color: #242825;
+}

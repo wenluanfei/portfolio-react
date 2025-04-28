@@ -1,0 +1,15 @@
+footer {
+  background-color: #cfd8dc;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+body.dark-mode footer {
+  color: #eeeeee; /* 或纯白 #ffffff，根据你喜欢 */
+  background-color: #2c2c2c; /* 可选：让底色也暗一点 */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05); /* 更适合深色 */
+}

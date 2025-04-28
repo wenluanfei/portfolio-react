@@ -1,0 +1,9 @@
+/* 使用统一的 .section 样式，额外样式如下 */
+.section h2 {
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.section p {
+  line-height: 1.6;
+}
