@@ -12,9 +12,10 @@ function Projects() {
     {
       title: 'To-Do List',
       image: todoImg,
-      description: 'A task management app with persistent local storage.',
-      tech: 'React, LocalStorage, CSS',
-      detail: 'Users can add, delete, and mark tasks. Data saved locally.',
+      description: 'A full-stack task management application with MongoDB backend and animated React frontend.',
+      tech: 'React, Express.js, MongoDB, Mongoose, Framer Motion, Axios, CSS',
+      detail: 'Users can add, delete, edit, and toggle tasks. Backend built with Express and MongoDB for data persistence. Frontend features interactive animations and visual rewards for task streaks.',
+
     },
     {
       title: 'Sushi Website',
@@ -24,11 +25,12 @@ function Projects() {
       detail: 'Customers can browse categorized sushi menus, place platter reservations with custom options, and receive confirmation via email. Admins can log in to manage orders and menu items securely with token-based authentication and Cloudinary image uploads.',
     },
     {
-      title: 'Portfolio Website',
+      title: 'Personal Portfolio Site',
       image: portfolioImg,
-      description: 'This site! Built from scratch with animations.',
-      tech: 'React, AOS, GitHub Pages',
-      detail: 'Fully responsive, dark mode, deployed on GitHub Pages.',
+      description: 'A sleek, interactive developer portfolio showcasing projects, skills, and contact info.',
+      tech: 'React, AOS (Animate on Scroll), Netlify, Tailwind CSS',
+      detail: 'Responsive design with light/dark mode toggle, smooth scroll-triggered animations, and seamless deployment via Netlify.',
+
     }
   ];
 
