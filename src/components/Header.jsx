@@ -9,7 +9,7 @@ function Header() {
     <header className="intro-section">
       <img src={myPhoto} alt="ZOE" className="profile-photo" />
       <h1>Hello, I'm ZOE</h1>
-      <p>Master of IT | Frontend Developer</p>
+      <p>Master of IT | Fullstack Developer</p>
     </header>
   );
 }
