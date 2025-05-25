@@ -12,14 +12,15 @@ function Projects() {
     {
       title: 'To-Do List',
       image: todoImg,
+      url: 'https://todolist-rho-liard.vercel.app/',
       description: 'A full-stack task management application with MongoDB backend and animated React frontend.',
       tech: 'React, Express.js, MongoDB, Mongoose, Framer Motion, Axios, CSS',
       detail: 'Users can add, delete, edit, and toggle tasks. Backend built with Express and MongoDB for data persistence. Frontend features interactive animations and visual rewards for task streaks.',
-
     },
     {
       title: 'Sushi Website',
       image: sushiImg,
+      url: 'https://sushibada.netlify.app/',
       description: 'A responsive sushi platter reservation website for a local restaurant in Oxenford, supporting online orders, image-rich menus, admin dashboard, and Stripe payment.',
       tech: 'Vue 3, Vite, TypeScript, Tailwind CSS, Node.js, Express, MongoDB, Cloudinary, Stripe API',
       detail: 'Customers can browse categorized sushi menus, place platter reservations with custom options, and receive confirmation via email. Admins can log in to manage orders and menu items securely with token-based authentication and Cloudinary image uploads.',
@@ -27,10 +28,10 @@ function Projects() {
     {
       title: 'Personal Portfolio Site',
       image: portfolioImg,
+      url: 'https://wenluanfei.netlify.app/',
       description: 'A sleek, interactive developer portfolio showcasing projects, skills, and contact info.',
       tech: 'React, AOS (Animate on Scroll), Netlify, Tailwind CSS',
       detail: 'Responsive design with light/dark mode toggle, smooth scroll-triggered animations, and seamless deployment via Netlify.',
-
     }
   ];
 
@@ -49,9 +50,14 @@ function Projects() {
             data-aos="fade-up"
             data-aos-delay={index * 150}
           >
-            <img src={project.image} alt={project.title} className="project-image" />
+            {/* img url */}
+            <a href={project.url} target="_blank" rel="noopener noreferrer">
+              <img src={project.image} alt={project.title} className="project-image hover-effect" />
+            </a>
+
             <h3>{project.title}</h3>
             <p>{project.description}</p>
+
             <button className="expand-btn" onClick={() => toggleExpand(index)}>
               {expandedIndex === index ? '▲ View Less' : '▼ View More'}
             </button>
@@ -60,6 +66,15 @@ function Projects() {
               <div className="project-details">
                 <p><strong>Tech Stack:</strong> {project.tech}</p>
                 <p><strong>Details:</strong> {project.detail}</p>
+                {/* button */}
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
+                  🔗 View Live Site
+                </a>
               </div>
             )}
           </div>
