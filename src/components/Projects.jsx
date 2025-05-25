@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import '../styles/Projects.css';
 
-import todoImg from '../assets/projects/todo.jpg';
-import weatherImg from '../assets/projects/weather.jpg';
-import portfolioImg from '../assets/projects/portfolio.jpg';
+import todoImg from '../assets/projects/todolist.jpg';
+import sushiImg from '../assets/projects/sushiweb.jpg';
+import portfolioImg from '../assets/projects/portfolioweb.jpg';
 
 function Projects() {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const projectList = [
     {
-      title: 'To-Do App',
+      title: 'To-Do List',
       image: todoImg,
       description: 'A task management app with persistent local storage.',
       tech: 'React, LocalStorage, CSS',
       detail: 'Users can add, delete, and mark tasks. Data saved locally.',
     },
     {
-      title: 'Weather App',
-      image: weatherImg,
-      description: 'Real-time weather using OpenWeather API.',
-      tech: 'React, API, TailwindCSS',
-      detail: 'City search, weather icons, responsive layout.',
+      title: 'Sushi Website',
+      image: sushiImg,
+      description: 'A responsive sushi platter reservation website for a local restaurant in Oxenford, supporting online orders, image-rich menus, admin dashboard, and Stripe payment.',
+      tech: 'Vue 3, Vite, TypeScript, Tailwind CSS, Node.js, Express, MongoDB, Cloudinary, Stripe API',
+      detail: 'Customers can browse categorized sushi menus, place platter reservations with custom options, and receive confirmation via email. Admins can log in to manage orders and menu items securely with token-based authentication and Cloudinary image uploads.',
     },
     {
       title: 'Portfolio Website',
