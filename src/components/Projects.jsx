@@ -1,86 +1,70 @@
-import React, { useState } from 'react';
-import '../styles/Projects.css';
+import React from 'react';
+import './Projects.css';
 
-import todoImg from '../assets/projects/todolist.jpg';
-import sushiImg from '../assets/projects/sushiweb.jpg';
-import portfolioImg from '../assets/projects/portfolioweb.jpg';
+const projects = [
+  {
+    num: '01',
+    title: 'CELEBRATION ALBUM',
+    desc: 'A platform where users create personalised countdown celebration pages — proposals, birthdays — with photo uploads, animated templates, and confetti effects.',
+    tags: ['React', 'Supabase', 'Node.js', 'AWS S3', ' Docker','  Render+Vercel','Interaction Design'],
+    status: 'Live ↗',
+    live: true,
+    url: 'https://momente-one.vercel.app/',
+  },
+  {
+    num: '02',
+    title: 'SUSHIBADA',
+    desc: 'Full-stack sushi booking & ordering platform with Stripe Checkout, JWT-secured admin dashboard, menu CRUD, and Cloudinary image upload.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Netlify Functions'],
+    status: 'Live ↗',
+    live: true,
+    url: 'https://sushibada.netlify.app/',
+  },
+  {
+    num: '03',
+    title: 'DICTATION APP',
+    desc: 'Interactive workplace-English dictation practice tool for non-native speakers, with audio playback, user input validation, and results feedback.',
+    tags: ['Vue 3', 'JavaScript', 'Interaction Design', 'Accessibility'],
+    status: 'Live ↗',
+    live: false,
+    url: null,
+  },
+];
 
 function Projects() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
-
-  const projectList = [
-    {
-      title: 'To-Do List',
-      image: todoImg,
-      url: 'https://todolist-rho-liard.vercel.app/',
-      description: 'A full-stack task management application with MongoDB backend and animated React frontend.',
-      tech: 'React, Express.js, MongoDB, Mongoose, Framer Motion, Axios, CSS',
-      detail: 'Users can add, delete, edit, and toggle tasks. Backend built with Express and MongoDB for data persistence. Frontend features interactive animations and visual rewards for task streaks.',
-    },
-    {
-      title: 'Sushi Website',
-      image: sushiImg,
-      url: 'https://sushibada.netlify.app/',
-      description: 'A responsive sushi platter reservation website for a local restaurant in Oxenford, supporting online orders, image-rich menus, admin dashboard, and Stripe payment.',
-      tech: 'Vue 3, Vite, TypeScript, Tailwind CSS, Node.js, Express, MongoDB, Cloudinary, Stripe API',
-      detail: 'Customers can browse categorized sushi menus, place platter reservations with custom options, and receive confirmation via email. Admins can log in to manage orders and menu items securely with token-based authentication and Cloudinary image uploads.',
-    },
-    {
-      title: 'Personal Portfolio Site',
-      image: portfolioImg,
-      url: 'https://wenluanfei.netlify.app/',
-      description: 'A sleek, interactive developer portfolio showcasing projects, skills, and contact info.',
-      tech: 'React, AOS (Animate on Scroll), Netlify, Tailwind CSS',
-      detail: 'Responsive design with light/dark mode toggle, smooth scroll-triggered animations, and seamless deployment via Netlify.',
-    }
-  ];
-
-  const toggleExpand = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
-
   return (
-    <div className="section" id="projects">
-      <h2 data-aos="fade-up">Projects</h2>
-      <div className="project-grid">
-        {projectList.map((project, index) => (
+    <section className="section projects" id="projects">
+      <div className="section-label">Selected Projects</div>
+
+      <div className="projects__list">
+        {projects.map(p => (
           <div
-            className="project-card"
-            key={index}
-            data-aos="fade-up"
-            data-aos-delay={index * 150}
+            key={p.num}
+            className={`project-card ${p.url ? 'project-card--clickable' : ''}`}
+            onClick={() => p.url && window.open(p.url, '_blank')}
           >
-            {/* img url */}
-            <a href={project.url} target="_blank" rel="noopener noreferrer">
-              <img src={project.image} alt={project.title} className="project-image hover-effect" />
-            </a>
+            <div className="project-card__num">{p.num}</div>
 
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-
-            <button className="expand-btn" onClick={() => toggleExpand(index)}>
-              {expandedIndex === index ? '▲ View Less' : '▼ View More'}
-            </button>
-
-            {expandedIndex === index && (
-              <div className="project-details">
-                <p><strong>Tech Stack:</strong> {project.tech}</p>
-                <p><strong>Details:</strong> {project.detail}</p>
-                {/* button */}
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  🔗 View Live Site
-                </a>
+            <div className="project-card__body">
+              <h3 className="project-card__title">{p.title}</h3>
+              <p className="project-card__desc">{p.desc}</p>
+              <div className="project-card__tags">
+                {p.tags.map(t => (
+                  <span key={t} className="project-card__tag">{t}</span>
+                ))}
               </div>
-            )}
+            </div>
+
+            <div className="project-card__right">
+              <span className={`project-card__status ${p.live ? 'project-card__status--live' : ''}`}>
+                {p.status}
+              </span>
+              <span className="project-card__arrow">→</span>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
