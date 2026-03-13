@@ -1,0 +1,27 @@
+.skills__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills__tag {
+  display: inline-block;
+  padding: 9px 18px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+  cursor: default;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.skills__tag:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+  background: rgba(200, 255, 0, 0.04);
+}
+
+.skills__tag--highlight {
+  border-color: var(--lime);
+  color: var(--lime);
+}

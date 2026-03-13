@@ -1,38 +1,43 @@
-import React, { useEffect, useState } from 'react';
-import '../styles/Navbar.css';
+import React, { useState, useEffect } from 'react';
+import './Navbar.css';
+
+const links = ['About', 'Skills', 'Projects', 'Contact'];
 
 function Navbar() {
-  const [activeSection, setActiveSection] = useState('');
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const sections = document.querySelectorAll('section, .section');
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    sections.forEach(section => observer.observe(section));
-    return () => observer.disconnect();
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const scrollTo = (id) => {
+    const el = document.getElementById(id.toLowerCase());
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setMenuOpen(false);
+  };
+
   return (
-    <nav className="navbar">
-      <div className="navbar-content">
-        <div className="nav-logo">ZOE</div>
-        <ul className="nav-links">
-          <li><a href="#about" className={activeSection === 'about' ? 'active' : ''}>About</a></li>
-          <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
-          <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
-          <li><a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
-        </ul>
+    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+      <div className="navbar__logo">ZOE</div>
+
+      <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
+        {links.map(l => (
+          <button key={l} className="navbar__link" onClick={() => scrollTo(l)}>
+            {l}
+          </button>
+        ))}
       </div>
+
+      <button
+        className={`navbar__burger ${menuOpen ? 'navbar__burger--open' : ''}`}
+        onClick={() => setMenuOpen(p => !p)}
+        aria-label="Toggle menu"
+      >
+        <span /><span /><span />
+      </button>
     </nav>
   );
 }

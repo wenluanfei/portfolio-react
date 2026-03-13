@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px;
+  border-top: 1px solid var(--border);
+}
+
+.footer__text {
+  font-size: 12px;
+  color: var(--dim);
+}
+
+@media (max-width: 768px) {
+  .footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+}

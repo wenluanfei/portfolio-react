@@ -1,10 +1,11 @@
 import React from 'react';
-import '../styles/Footer.css';
+import './Footer.css';
 
 function Footer() {
   return (
-    <footer>
-      <p>© 2025 ZOE. All rights reserved.</p>
+    <footer className="footer">
+      <span className="footer__text">© 2026 Wenluan Fei</span>
+      <span className="footer__text">Gold Coast · Brisbane · AU</span>
     </footer>
   );
 }

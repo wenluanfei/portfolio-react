@@ -1,48 +1,46 @@
-import React, { useState, useRef } from 'react';
-import '../styles/Skills.css';
+import React from 'react';
+import './Skills.css';
+
+const skills = [
+  { name: 'React', highlight: true },
+  { name: 'Vue 3', highlight: true },
+  { name: 'Next.js', highlight: true },
+  { name: 'TypeScript', highlight: true },
+  { name: 'JavaScript (ES6+)', highlight: false },
+  { name: 'HTML5 / CSS3', highlight: false },
+  { name: 'CSS Animations', highlight: false },
+  { name: 'Tailwind CSS', highlight: true },
+  { name: 'Node.js', highlight: false },
+  { name: 'Express', highlight: false },
+  { name: 'REST APIs', highlight: false },
+  { name: 'JWT Auth', highlight: false },
+  { name: 'MongoDB', highlight: false },
+  { name: 'Supabase', highlight: false },
+  { name: 'Stripe', highlight: false },
+  { name: 'Cloudinary', highlight: false },
+  { name: 'Figma', highlight: true },
+  { name: 'Git / GitHub', highlight: false },
+  { name: 'Postman', highlight: false },
+  { name: 'Netlify / Vercel', highlight: false },
+  { name: 'Python', highlight: false },
+  { name: 'SSR / CSR', highlight: false },
+];
 
 function Skills() {
-  const [openSection, setOpenSection] = useState(null);
-  const sectionRefs = useRef({});
-
-  const toggleSection = (section) => {
-    setOpenSection(openSection === section ? null : section);
-  };
-
-  const skillsData = {
-    Frontend: ['React', 'JavaScript', 'HTML/CSS', 'Tailwind CSS'],
-    Backend: ['Python', 'SQL', 'Node.js', 'MongoDB'],
-    Tools: ['yarn', 'GitHub', 'VS Code'],
-    Deployment: ['Netlify'],
-    Design: ['Figma (basic)'],
-  };
-
   return (
-    <div className="section" id="skills">
-      <h2>Skills</h2>
-      {Object.entries(skillsData).map(([category, skills]) => (
-        <div key={category} className="skill-category">
-          <h3 onClick={() => toggleSection(category)} className="skill-header">
-            {category} {openSection === category ? '▲' : '▼'}
-          </h3>
-          <div
-            className={`skill-content ${openSection === category ? 'open' : ''}`}
-            ref={(el) => (sectionRefs.current[category] = el)}
-            style={{
-              maxHeight: openSection === category
-                ? `${sectionRefs.current[category]?.scrollHeight}px`
-                : '0px'
-            }}
+    <section className="section skills" id="skills">
+      <div className="section-label">Skills</div>
+      <div className="skills__grid">
+        {skills.map(s => (
+          <span
+            key={s.name}
+            className={`skills__tag ${s.highlight ? 'skills__tag--highlight' : ''}`}
           >
-            <ul>
-              {skills.map((skill) => (
-                <li key={skill}>{skill}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      ))}
-    </div>
+            {s.name}
+          </span>
+        ))}
+      </div>
+    </section>
   );
 }
 
