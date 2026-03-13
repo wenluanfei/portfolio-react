@@ -5,15 +5,6 @@
   align-items: start;
 }
 
-.about__number {
-  font-family: var(--font-display);
-  font-size: 110px;
-  line-height: 1;
-  color: var(--border);
-  margin-bottom: -16px;
-  user-select: none;
-}
-
 .about__title {
   font-family: var(--font-display);
   font-size: 48px;

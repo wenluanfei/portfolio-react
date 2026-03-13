@@ -15,7 +15,6 @@ function About() {
 
       <div className="about__grid">
         <div className="about__left">
-          <div className="about__number">01</div>
           <h2 className="about__title">FULL-STACK,<br />FRONT TO BACK</h2>
           <p className="about__text">
             <strong>Junior full-stack developer</strong> based on the Gold Coast. I hold a

@@ -1,4 +1,25 @@
-.skills__grid {
+.skills__groups {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.skills__group {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.skills__group-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--lime);
+  padding-top: 10px;
+}
+
+.skills__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -21,7 +42,9 @@
   background: rgba(200, 255, 0, 0.04);
 }
 
-.skills__tag--highlight {
-  border-color: var(--lime);
-  color: var(--lime);
+@media (max-width: 768px) {
+  .skills__group {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
