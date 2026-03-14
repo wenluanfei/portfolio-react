@@ -12,22 +12,25 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 function App() {
   const followerRef = useRef(null);
   const dotRef = useRef(null);
-  const mx = useRef(0), my = useRef(0);
-  const fx = useRef(0), fy = useRef(0);
+  const mx = useRef(-200), my = useRef(-200);
+  const fx = useRef(-200), fy = useRef(-200);
 
   useEffect(() => {
-    // Custom cursor
     const onMove = e => {
       mx.current = e.clientX;
       my.current = e.clientY;
       if (dotRef.current) {
         dotRef.current.style.left = e.clientX + 'px';
         dotRef.current.style.top = e.clientY + 'px';
+        dotRef.current.style.opacity = '1';
+      }
+      if (followerRef.current) {
+        followerRef.current.style.opacity = '1';
       }
     };
     window.addEventListener('mousemove', onMove);
 
-    let raf;
+    let animId;
     const animate = () => {
       fx.current += (mx.current - fx.current) * 0.1;
       fy.current += (my.current - fy.current) * 0.1;
@@ -35,11 +38,10 @@ function App() {
         followerRef.current.style.left = fx.current + 'px';
         followerRef.current.style.top = fy.current + 'px';
       }
-      raf = requestAnimationFrame(animate);
+      animId = requestAnimationFrame(animate);
     };
     animate();
 
-    // Scroll progress bar
     const onScroll = () => {
       const doc = document.documentElement;
       const pct = (window.scrollY / (doc.scrollHeight - doc.clientHeight)) * 100;
@@ -51,22 +53,19 @@ function App() {
     return () => {
       window.removeEventListener('mousemove', onMove);
       window.removeEventListener('scroll', onScroll);
-      cancelAnimationFrame(raf);
+      cancelAnimationFrame(animId);
     };
   }, []);
 
   return (
     <div className="App">
-      {/* Scroll progress */}
       <div className="progress-track">
         <div id="scroll-progress" className="progress-fill" />
       </div>
 
-      {/* Custom cursor */}
       <div className="cursor-follower" ref={followerRef} />
       <div className="cursor-dot" ref={dotRef} />
 
-      {/* Film grain */}
       <div className="grain-overlay" />
 
       <Navbar />
@@ -82,4 +81,3 @@ function App() {
 }
 
 export default App;
-
