@@ -26,7 +26,7 @@ const projects = [
     desc: 'Interactive workplace-English dictation practice tool for non-native speakers, with audio playback, user input validation, and results feedback.',
     tags: ['Vue 3', 'JavaScript', 'Interaction Design', 'Accessibility'],
     status: 'Live ↗',
-    live: true,
+    live: false,
     url: null,
   },
 ];
