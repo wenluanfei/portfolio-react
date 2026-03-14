@@ -62,12 +62,9 @@ function App() {
       <div className="progress-track">
         <div id="scroll-progress" className="progress-fill" />
       </div>
-
       <div className="cursor-follower" ref={followerRef} />
       <div className="cursor-dot" ref={dotRef} />
-
       <div className="grain-overlay" />
-
       <Navbar />
       <Header />
       <About />
