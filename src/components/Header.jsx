@@ -50,7 +50,6 @@ function Header() {
   useEffect(() => {
     const el = nameRef.current;
     if (!el) return;
-    let raf;
     const onEnter = () => {
       let iter = 0;
       clearInterval(scrambleRef.current);
