@@ -26,7 +26,7 @@ const projects = [
     desc: 'Interactive workplace-English dictation practice tool for non-native speakers, with audio playback, user input validation, and results feedback.',
     tags: ['React', 'Vite','JavaScript (ES6+)',' GitHub', 'Interaction Design', 'Web Speech API'],
     status: 'Live ↗',
-    live: false,
+    live: true,
     url: 'https://dictationfei.netlify.app//',
   },
 ];
