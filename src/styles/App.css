@@ -1,4 +1,4 @@
-﻿@media (pointer: fine) {
+@media (pointer: fine) {
   * { cursor: none !important; }
   .cursor-follower {
     position: fixed;
