@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Skills.css';
 
 const skillGroups = [
@@ -21,12 +21,29 @@ const skillGroups = [
 ];
 
 function Skills() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.reveal').forEach((el, i) => {
+            setTimeout(() => el.classList.add('visible'), i * 100);
+          });
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    if (ref.current) io.observe(ref.current);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <section className="section skills" id="skills">
-      <div className="section-label">Skills</div>
+    <section className="section skills" id="skills" ref={ref}>
+      <div className="section-label reveal">Skills</div>
       <div className="skills__groups">
-        {skillGroups.map(group => (
-          <div key={group.category} className="skills__group">
+        {skillGroups.map((group, gi) => (
+          <div key={group.category} className="skills__group reveal" style={{ transitionDelay: `${gi * 0.1}s` }}>
             <div className="skills__group-label">{group.category}</div>
             <div className="skills__tags">
               {group.items.map(item => (
