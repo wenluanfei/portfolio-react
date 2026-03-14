@@ -24,10 +24,10 @@ const projects = [
     num: '03',
     title: 'DICTATION APP',
     desc: 'Interactive workplace-English dictation practice tool for non-native speakers, with audio playback, user input validation, and results feedback.',
-    tags: ['Wordpress', 'PHP', 'Interaction Design', 'SEO'],
+    tags: ['React', 'Vite','JavaScript (ES6+)',' GitHub', 'Interaction Design', 'Web Speech API'],
     status: 'Live ↗',
     live: false,
-    url: null,
+    url: 'https://dictationfei.netlify.app//',
   },
 ];
 
