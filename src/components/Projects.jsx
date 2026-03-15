@@ -27,24 +27,39 @@ const projects = [
     tags: ['React', 'Vite','Supabase (Auth + PostgreSQL + Realtime)',' Claude API', 'GitHub', 'OpenAI TTS'],
     status:  'Live ↗',
     live: true,
-    url: 'https://dictationfei.netlify.app//',
+    url: 'https://dictationfei.netlify.app/',
   },
 ];
 
 function Projects() {
-  return (
-    <section className="section projects" id="projects">
-      <div className="section-label">Selected Projects</div>
+  const ref = useRef(null);
 
+  useEffect(() => {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.reveal').forEach((el, i) => {
+            setTimeout(() => el.classList.add('visible'), i * 130);
+          });
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    if (ref.current) io.observe(ref.current);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <section className="section projects" id="projects" ref={ref}>
+      <div className="section-label reveal">Selected Projects</div>
       <div className="projects__list">
         {projects.map(p => (
           <div
             key={p.num}
-            className={`project-card ${p.url ? 'project-card--clickable' : ''}`}
+            className={`project-card reveal ${p.url ? 'project-card--clickable' : ''}`}
             onClick={() => p.url && window.open(p.url, '_blank')}
           >
             <div className="project-card__num">{p.num}</div>
-
             <div className="project-card__body">
               <h3 className="project-card__title">{p.title}</h3>
               <p className="project-card__desc">{p.desc}</p>
@@ -54,7 +69,6 @@ function Projects() {
                 ))}
               </div>
             </div>
-
             <div className="project-card__right">
               <span className={`project-card__status ${p.live ? 'project-card__status--live' : ''}`}>
                 {p.status}
