@@ -5,29 +5,29 @@ const projects = [
   {
     num: '01',
     title: 'CELEBRATION ALBUM',
-    desc: 'A platform where users create personalised countdown celebration pages — proposals, birthdays — with photo uploads, animated templates, and confetti effects.',
-    tags: ['React', 'Node.js', 'Supabase', 'AWS S3', 'Docker', 'Render + Vercel', 'Interaction Design'],
-    status: 'Live ↗',
+    desc: 'Built a full-stack celebration page builder for proposals, birthdays, and milestone events, enabling users to create personalized countdown pages with photo uploads, animated templates, and interactive effects.',
+    tags: ['React', 'Node.js', 'Supabase', 'AWS S3', 'Docker', 'Vercel', 'Render'],
+    status: 'Live',
     live: true,
     url: 'https://momente-one.vercel.app/',
   },
   {
     num: '02',
     title: 'SUSHIBADA',
-    desc: 'Full-stack sushi booking & ordering platform with Stripe Checkout, JWT-secured admin dashboard, menu CRUD, and Cloudinary image upload.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Netlify Functions'],
-    status: 'Live ↗',
+    desc: 'Developed a full-stack sushi ordering and reservation platform with online payments, admin-side menu management, secure authentication, and cloud-based image handling.',
+    tags: ['React', 'Node.js', 'MongoDB', 'JWT Auth', 'Stripe Checkout', 'Cloudinary'],
+    status: 'Live',
     live: true,
     url: 'https://sushibada.netlify.app/',
   },
   {
     num: '03',
     title: 'DICTATION APP',
-    desc: 'Built a full-stack English dictation web app with JWT-secured user authentication, real-time competitive battle mode via WebSocket, cloud-synced progress using PostgreSQL, AI-powered sentence generation, and a bilingual corpus management system with CSV import.',
-    tags: ['React', 'Vite','Supabase (Auth + PostgreSQL + Realtime)',' Claude API', 'GitHub', 'OpenAI TTS'],
-    status: 'Live ↗',
+    desc: 'Created an AI-assisted English dictation platform with authentication, real-time practice and battle features, progress synchronization, AI-generated exercises, text-to-speech playback, and bilingual corpus management.',
+    tags: ['React', 'Vite', 'Supabase Auth', 'PostgreSQL', 'Supabase Realtime', 'WebSocket', 'Claude API', 'OpenAI TTS'],
+    status: 'Live',
     live: true,
-    url: 'https://dictationfei.netlify.app//',
+    url: 'https://dictationfei.netlify.app/',
   },
 ];
 
@@ -73,7 +73,7 @@ function Projects() {
               <span className={`project-card__status ${p.live ? 'project-card__status--live' : ''}`}>
                 {p.status}
               </span>
-              <span className="project-card__arrow">→</span>
+              <span className="project-card__arrow">-&gt;</span>
             </div>
           </div>
         ))}
