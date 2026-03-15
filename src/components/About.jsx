@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './About.css';
 
 const stats = [
-  { num: '3+', label: 'Projects Shipped' },
+  { num: '4+', label: 'Projects Shipped' },
   { num: 'MIT', label: 'Griffith Uni' },
   { num: 'EN', label: '+ Mandarin' },
   { num: 'AU PR', label: 'No Sponsorship' },

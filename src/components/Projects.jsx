@@ -4,6 +4,23 @@ import './Projects.css';
 const projects = [
   {
     num: '01',
+    title: 'SUSHIBADA',
+    desc: 'Full-stack sushi booking & ordering platform with Stripe Checkout, JWT-secured admin dashboard, menu CRUD, and Cloudinary image upload.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Netlify Functions'],
+    status:  'Live ↗',
+    live: true,
+    url: 'https://sushibada.netlify.app/',
+  },{
+    num: '02',
+    title: 'DICTATION APP',
+    desc: 'Built a full-stack English dictation web app with JWT-secured user authentication, real-time competitive battle mode via WebSocket, cloud-synced progress using PostgreSQL, AI-powered sentence generation, and a bilingual corpus management system with CSV import.',
+    tags: ['React', 'Vite','Supabase (Auth + PostgreSQL + Realtime)',' Claude API', 'GitHub', 'OpenAI TTS'],
+    status:  'Live ↗',
+    live: true,
+    url: 'https://dictationfei.netlify.app/',
+  },
+  {
+    num: '03',
     title: 'CELEBRATION ALBUM',
     desc: 'A platform where users create personalised countdown celebration pages — proposals, birthdays — with photo uploads, animated templates, and confetti effects.',
     tags: ['React', 'Node.js', 'Supabase', 'AWS S3', 'Docker', 'Render + Vercel', 'Interaction Design'],
@@ -12,24 +29,15 @@ const projects = [
     url: 'https://momente-one.vercel.app/',
   },
   {
-    num: '02',
-    title: 'SUSHIBADA',
-    desc: 'Full-stack sushi booking & ordering platform with Stripe Checkout, JWT-secured admin dashboard, menu CRUD, and Cloudinary image upload.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Netlify Functions'],
-    status:  'Live ↗',
-    live: true,
-    url: 'https://sushibada.netlify.app/',
+    num: '04',
+    title: 'Peking Duck Restaurant Website',
+    desc: 'A platform where users create personalised countdown celebration pages — proposals, birthdays — with photo uploads, animated templates, and confetti effects.',
+    tags: ['Wordpress', 'PHP', 'Supabase', 'Interaction Design'],
+    status:  'In Progress ↗',
+    live: false,
+    url: null,
   },
-  {
-    num: '03',
-    title: 'DICTATION APP',
-    desc: 'Built a full-stack English dictation web app with JWT-secured user authentication, real-time competitive battle mode via WebSocket, cloud-synced progress using PostgreSQL, AI-powered sentence generation, and a bilingual corpus management system with CSV import.',
-    tags: ['React', 'Vite','Supabase (Auth + PostgreSQL + Realtime)',' Claude API', 'GitHub', 'OpenAI TTS'],
-    status:  'Live ↗',
-    live: true,
-    url: 'https://dictationfei.netlify.app/',
-  },
-];
+]
 
 function Projects() {
   const ref = useRef(null);
