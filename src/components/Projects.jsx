@@ -23,8 +23,8 @@ const projects = [
   {
     num: '03',
     title: 'DICTATION APP',
-    desc: 'Interactive workplace-English dictation practice tool for non-native speakers, with audio playback, user input validation, and results feedback.',
-    tags: ['React', 'Vite','JavaScript (ES6+)',' GitHub', 'Interaction Design', 'Web Speech API'],
+    desc: 'Built a full-stack English dictation web app with JWT-secured user authentication, real-time competitive battle mode via WebSocket, cloud-synced progress using PostgreSQL, AI-powered sentence generation, and a bilingual corpus management system with CSV import.',
+    tags: ['React', 'Vite','Supabase (Auth + PostgreSQL + Realtime)',' Claude API', 'GitHub', 'OpenAI TTS'],
     status: 'Live ↗',
     live: true,
     url: 'https://dictationfei.netlify.app//',
