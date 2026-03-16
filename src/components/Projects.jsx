@@ -6,7 +6,7 @@ const projects = [
     num: '01',
     title: 'SUSHIBADA',
     desc: 'Full-stack sushi booking & ordering platform with Stripe Checkout, JWT-secured admin dashboard, menu CRUD, and Cloudinary image upload.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Netlify Functions'],
+    tags: ['React', 'Node.js', 'MongoDB', 'Stripe','EmailJS', 'Netlify Functions'],
     status:  'Live ↗',
     live: true,
     url: 'https://sushibada.netlify.app/',
