@@ -17,7 +17,7 @@ const projects = [
     tags: ['React', 'Vite','Supabase (Auth + PostgreSQL + Realtime)',' Claude API', 'GitHub', 'OpenAI TTS'],
     status:  'Live ↗',
     live: true,
-    url: 'https://dictationfei.netlify.app/',
+    url: 'https://listentype.com/',
   },
   {
     num: '03',
