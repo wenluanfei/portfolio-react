@@ -6,10 +6,10 @@ const projects = [
     num: '01',
     title: 'SUSHIBADA',
     desc: 'Full-stack sushi booking & ordering platform with Stripe Checkout, JWT-secured admin dashboard, menu CRUD, and Cloudinary image upload.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe','EmailJS', 'Netlify Functions'],
+    tags: ['React', 'Node.js', 'Supabase', 'Vercel', 'Stripe API', 'SEO'],
     status:  'Live ↗',
     live: true,
-    url: 'https://sushibada.netlify.app/',
+    url: 'https://www.sushibada.com.au/',
   },{
     num: '02',
     title: 'DICTATION APP',
